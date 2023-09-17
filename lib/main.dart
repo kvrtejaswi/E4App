@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Authentication/login.dart';
 import 'Authentication/forgotPassword.dart';
 import 'Authentication/recovery.dart';
+import 'Session/sessionConfirmation.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Recovery(), // Replace with your app's initial screen
+      home: sessionConfirmation(), // Replace with your app's initial screen
     );
   }
 }

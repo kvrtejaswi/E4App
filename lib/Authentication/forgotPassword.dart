@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:e4app/theme.dart';
+import 'recovery.dart';
 
-void main() => runApp(
-  ForgotPass());
+void main() => runApp(ForgotPass());
 
 class ForgotPass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Set this to false to remove the debug banner
+      debugShowCheckedModeBanner:
+          false, // Set this to false to remove the debug banner
       home: ForgotPage(),
     );
   }
@@ -50,9 +51,8 @@ class _ForgotPageState extends State<ForgotPage> {
                   child: Text(
                     "Login",
                     style: TextStyle(
-                      fontSize: 32.0, 
-                      fontWeight:
-                          FontWeight.bold, 
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -63,13 +63,11 @@ class _ForgotPageState extends State<ForgotPage> {
                   margin: EdgeInsets.only(top: 56.0),
                   child: Text(
                     "Forgot your password?",
-                    style: TextStyle(
-                      fontSize: 24.0, 
-                      fontWeight: FontWeight.bold
-                    ),
+                    style:
+                        TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
                   ),
                 ),
-                 // "Enter your email address to reset password" text
+                // "Enter your email address to reset password" text
                 Container(
                   width: 274.0,
                   height: 55.0,
@@ -77,7 +75,7 @@ class _ForgotPageState extends State<ForgotPage> {
                   child: Text(
                     "Enter your email address to reset password",
                     style: TextStyle(
-                      fontSize: 14.0, 
+                      fontSize: 14.0,
                     ),
                   ),
                 ),
@@ -94,10 +92,14 @@ class _ForgotPageState extends State<ForgotPage> {
                 // Next Button
                 Container(
                   width: 300.0,
-                  height: 51.0, 
+                  height: 51.0,
                   margin: EdgeInsets.only(top: 96.0),
                   child: ElevatedButton(
-                      onPressed: _next,
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (_) => Recovery(),
+                        ));
+                      },
                       child: Text("Next"),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 void main() {
   runApp(SplashScreen());
@@ -8,6 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SplashScreenPage(),
     );
   }
@@ -39,7 +41,7 @@ class SplashScreenPage extends StatelessWidget {
             children: <Widget>[
               // Text with size 33px and bold
               Container(
-                margin: EdgeInsets.only(bottom: 100.0, left: 33.0, right: 33.0),
+                margin: EdgeInsets.only(bottom: 100.0, left: 30.0, right: 30.0),
                 child: Text(
                   'Find a guide to help you improve your skills for a better future',
                   style: TextStyle(
@@ -59,10 +61,24 @@ class SplashScreenPage extends StatelessWidget {
                     // Login button
                     Container(
                       width: 153,
+                      height: 48,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Add your login button action here
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(
+                            builder: (_) => LoginApp(),
+                          ));
                         },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Colors.transparent, // Transparent background
+                          foregroundColor: Colors.white, // Text color
+                          side: BorderSide(color: Colors.white, width: 2),
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(8.0), // Rounded corners
+                          ), // White border
+                        ),
                         child: Text('Login'),
                       ),
                     ),
@@ -70,10 +86,18 @@ class SplashScreenPage extends StatelessWidget {
                     // Sign Up button
                     Container(
                       width: 153,
+                      height: 48,
                       child: ElevatedButton(
-                        onPressed: () {
-                          // Add your sign-up button action here
-                        },
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Colors.white, // Transparent background
+                          foregroundColor: Colors.blue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(8.0), // Rounded corners
+                          ), // Text color
+                        ),
                         child: Text('Sign Up'),
                       ),
                     ),

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:e4app/theme.dart';
+import 'forgotPassword.dart';
 
-void main() => runApp(
-  LoginApp());
+void main() => runApp(LoginApp());
 
 class LoginApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Set this to false to remove the debug banner
+      debugShowCheckedModeBanner:
+          false, // Set this to false to remove the debug banner
       home: LoginPage(),
     );
   }
@@ -54,9 +55,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Login",
                     style: TextStyle(
-                      fontSize: 32.0, 
-                      fontWeight:
-                          FontWeight.bold, 
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Welcome back!",
                     style: TextStyle(
-                      fontSize: 24.0, 
+                      fontSize: 24.0,
                     ),
                   ),
                 ),
@@ -96,14 +96,14 @@ class _LoginPageState extends State<LoginPage> {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      // Add the logic to handle the "Forgot Password?" action here
-                      print("Forgot Password?");
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (_) => ForgotPass(),
+                      ));
                     },
                     child: Text(
                       "Forgot Password?",
                       style: TextStyle(
-                        color:
-                            Colors.black, 
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                 // Login Button
                 Container(
                   width: 300.0,
-                  height: 51.0, 
+                  height: 51.0,
                   child: ElevatedButton(
                       onPressed: _login,
                       child: Text("Login"),

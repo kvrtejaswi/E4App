@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:e4app/theme.dart';
+import 'login.dart';
 
 void main() => runApp(Recovery());
 
@@ -90,7 +91,11 @@ class _RecoveryPageState extends State<RecoveryPage> {
                   height: 51.0,
                   margin: EdgeInsets.only(top: 96.0),
                   child: ElevatedButton(
-                      onPressed: _next,
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (_) => LoginApp(),
+                        ));
+                      },
                       child: Text("Back to Login"),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(

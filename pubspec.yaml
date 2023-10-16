@@ -20,6 +20,7 @@ flutter:
   assets:
     - assets/profile_image.jpg
     - assets/screen_splash.jpg
+    - assets/icons/
 
   fonts:
     - family: NunitoSans

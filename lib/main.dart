@@ -10,7 +10,8 @@ import 'Authentication/splashScreen.dart';
 import 'Authentication/IntroScreen.dart';
 import 'Conversation/callScreen.dart';
 import 'Authentication/signup1.dart';
-import 'Onboarding/profile.dart';
+import 'Onboarding/learnerprofile.dart';
+import 'Onboarding/guideprofile.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(), 
+      home: GuideProfilePage(), 
     );
   }
 }

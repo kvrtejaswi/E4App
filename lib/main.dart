@@ -8,6 +8,9 @@ import 'Onboarding/guideEntreprenuer.dart';
 import 'Onboarding/guideEnglish.dart';
 import 'Authentication/splashScreen.dart';
 import 'Authentication/IntroScreen.dart';
+import 'Conversation/callScreen.dart';
+import 'Authentication/signup1.dart';
+import 'Onboarding/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroScreen(), 
+      home: ProfilePage(), 
     );
   }
 }
